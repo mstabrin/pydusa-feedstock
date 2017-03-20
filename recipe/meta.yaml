@@ -13,6 +13,7 @@ build:
 requirements:
     build:
         - python
+        - numpy 1.11.*
 
 about:
   license: GPL-2.0
