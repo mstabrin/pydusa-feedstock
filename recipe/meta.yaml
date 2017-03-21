@@ -14,6 +14,7 @@ requirements:
     build:
         - python
         - numpy 1.11.*
+        - openmpi
 
 about:
   license: GPL-2.0
