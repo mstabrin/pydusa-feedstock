@@ -212,9 +212,6 @@ if not get_mpiroot(options):
 		print "You can also run this script again with the --force option - it will download and install MPI (openmpi-%s) for you."%default_version_of_open_mpi_to_istall
 		exit(-1)
 
-## need to install fftw3-mpi
-install_fftw3_mpi()
-
 print ""
 print "=====> Configuring the mpi python binding"
 

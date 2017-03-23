@@ -15,9 +15,11 @@ requirements:
         - python
         - numpy x.x
         - openmpi
+        - fftw-mpi
     run:
         - numpy x.x
         - openmpi
+        - fftw-mpi
 
 test:
   imports:
