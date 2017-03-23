@@ -7,7 +7,7 @@ source:
     url: http://ncmi.bcm.edu/ncmi/software/counter_222/software_121/pydusa-1.15es-fftmpi-6__2016_09_07.tgz
 
 build:
-    number: 5
+    number: 6
     skip: True  # [win or py3k]
 
 requirements:
