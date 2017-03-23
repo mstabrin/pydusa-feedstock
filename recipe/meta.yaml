@@ -15,6 +15,9 @@ requirements:
         - python
         - numpy 1.11.*
         - openmpi
+    run:
+        - numpy 1.11.*
+        - openmpi
 
 test:
   imports:
