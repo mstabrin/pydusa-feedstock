@@ -40,12 +40,38 @@ echo "$config" > ~/.condarc
 # A lock sometimes occurs with incomplete builds. The lock file is stored in build_artefacts.
 conda clean --lock
 
-conda install --yes --quiet conda-forge-build-setup -c conda-forge
+conda install --yes --quiet conda-forge-build-setup
 source run_conda_forge_build_setup
 
-# Embarking on 1 case(s).
+
+# Install the yum requirements defined canonically in the
+# "recipe/yum_requirements.txt" file. After updating that file,
+# run "conda smithy rerender" and this line be updated
+# automatically.
+yum install -y wget perl
+
+
+# Embarking on 3 case(s).
+    set -x
+    export CONDA_NPY=111
+    export CONDA_PY=27
+    set +x
     conda build /recipe_root --quiet || exit 1
-    upload_or_check_non_existence /recipe_root conda-forge --channel=main || exit 1
+    upload_or_check_non_existence /recipe_root cryoem --channel=main || exit 1
+
+    set -x
+    export CONDA_NPY=111
+    export CONDA_PY=35
+    set +x
+    conda build /recipe_root --quiet || exit 1
+    upload_or_check_non_existence /recipe_root cryoem --channel=main || exit 1
+
+    set -x
+    export CONDA_NPY=111
+    export CONDA_PY=36
+    set +x
+    conda build /recipe_root --quiet || exit 1
+    upload_or_check_non_existence /recipe_root cryoem --channel=main || exit 1
 touch /feedstock_root/build_artefacts/conda-forge-build-done
 EOF
 
