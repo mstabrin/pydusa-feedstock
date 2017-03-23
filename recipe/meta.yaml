@@ -3,8 +3,8 @@ package:
     version: 1.15
 
 source:
-    fn: pydusa-1.15es-fftmpi-6__2016_09_07.tgz
-    url: http://ncmi.bcm.edu/ncmi/software/counter_222/software_121/pydusa-1.15es-fftmpi-6__2016_09_07.tgz
+    url: https://github.com/cryoem/pydusa/archive/master.tar.gz
+    fn: pydusa-master.tar.gz
 
 build:
     number: 6
