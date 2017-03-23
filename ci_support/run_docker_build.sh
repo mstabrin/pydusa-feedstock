@@ -14,6 +14,7 @@ config=$(cat <<CONDARC
 
 channels:
  - conda-forge
+ - defaults
  - cryoem
 
 conda-build:
