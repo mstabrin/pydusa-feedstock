@@ -112,9 +112,9 @@ def update_Makefile_src():
 	pwd = os.getcwd()
 	chdir("src")
 
-	library_location = "%s/fftw_mpi/installation/lib"%pwd
+	library_location = "${PREFIX}/lib"
 	adding_dict = {
-		"CFLAGS = " : ' -I%s/fftw_mpi/installation/include -DPYDUSA_VERSION=%s'%(pwd, pwd),
+		"CFLAGS = " : ' -I${PREFIX}/include -DPYDUSA_VERSION=%s'%(pwd),
 		"LDFLAGS = " : " -L" + library_location + " -lfftw3_mpi -lfftw3 -lm "
 	}
 
