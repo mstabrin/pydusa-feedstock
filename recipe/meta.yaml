@@ -13,10 +13,10 @@ build:
 requirements:
     build:
         - python
-        - numpy 1.11.*
+        - numpy x.x
         - openmpi
     run:
-        - numpy 1.11.*
+        - numpy x.x
         - openmpi
 
 test:
