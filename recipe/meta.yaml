@@ -16,6 +16,10 @@ requirements:
         - numpy 1.11.*
         - openmpi
 
+test:
+  imports:
+    - mpi
+
 about:
   license: GPL-2.0
   summary: Pydusa is a package for parallel programming using Python.
