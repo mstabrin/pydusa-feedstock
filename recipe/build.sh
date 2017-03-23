@@ -1,5 +1,6 @@
 #!/bin/bash
 
-export EMAN2DIR=$SP_DIR
+./configure --prefix=${SP_DIR}
 
-python "${RECIPE_DIR}"/install_mpi.py
+make
+make install
