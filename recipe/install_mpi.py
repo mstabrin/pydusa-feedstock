@@ -243,13 +243,13 @@ eman2_source_file, bash_command_to_add = update_Makefile_src()
 		
 print ""
 print "=====> Building the mpi python binding"
-myexec("make clean >> log.txt")	
-myexec("make all >> log.txt")
+myexec("make clean")	
+myexec("make all")
 
 
 print ""
 print "=====> Install the mpi python binding"
-myexec("make install >> log.txt")	
+myexec("make install")	
 
 
 if macos():
