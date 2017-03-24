@@ -1,10 +1,8 @@
 #!/bin/bash
 
-export EMAN2DIR=$SP_DIR
+./configure --prefix=${SP_DIR}
+			
+sed -i.bak 's/\(^LDFLAGS.*$\)/\1 -lfftw3_mpi -lfftw3/' src/Makefile
 
-make clean
-make distclean
-
-patch Makefile.in "${RECIPE_DIR}"/patch.diff
-
-python "${RECIPE_DIR}"/install_mpi.py
+make
+make install
