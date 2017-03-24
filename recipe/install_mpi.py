@@ -112,9 +112,9 @@ def update_Makefile_src():
 	pwd = os.getcwd()
 	chdir("src")
 
-	library_location = "%s/fftw_mpi/installation/lib"%pwd
+	library_location = "${PREFIX}/lib"
 	adding_dict = {
-		"CFLAGS = " : ' -I%s/fftw_mpi/installation/include -DPYDUSA_VERSION=%s'%(pwd, pwd),
+		"CFLAGS = " : ' -I${PREFIX}/include -DPYDUSA_VERSION=%s'%(pwd),
 		"LDFLAGS = " : " -L" + library_location + " -lfftw3_mpi -lfftw3 -lm "
 	}
 
@@ -211,9 +211,6 @@ if not get_mpiroot(options):
 		print "In this case read the user guide - you have to probably load appriopriate module by \"module load\" command."
 		print "You can also run this script again with the --force option - it will download and install MPI (openmpi-%s) for you."%default_version_of_open_mpi_to_istall
 		exit(-1)
-
-## need to install fftw3-mpi
-install_fftw3_mpi()
 
 print ""
 print "=====> Configuring the mpi python binding"
