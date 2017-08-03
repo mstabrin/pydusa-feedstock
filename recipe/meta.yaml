@@ -7,7 +7,7 @@ source:
     fn: pydusa-master.tar.gz
 
 build:
-    number: 7
+    number: 8
     skip: True  # [win or py3k]
 
 requirements:
