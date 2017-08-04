@@ -13,9 +13,9 @@ docker info
 config=$(cat <<CONDARC
 
 channels:
- - conda-forge
- - defaults
  - cryoem
+ - defaults
+ - conda-forge
 
 conda-build:
  root-dir: /feedstock_root/build_artefacts
@@ -25,16 +25,30 @@ show_channel_urls: true
 CONDARC
 )
 
+# In order for the conda-build process in the container to write to the mounted
+# volumes, we need to run with the same id as the host machine, which is
+# normally the owner of the mounted volumes, or at least has write permission
+HOST_USER_ID=$(id -u)
+# Check if docker-machine is being used (normally on OSX) and get the uid from
+# the VM
+if hash docker-machine 2> /dev/null && docker-machine active > /dev/null; then
+    HOST_USER_ID=$(docker-machine ssh $(docker-machine active) id -u)
+fi
+
 rm -f "$FEEDSTOCK_ROOT/build_artefacts/conda-forge-build-done"
 
 cat << EOF | docker run -i \
                         -v "${RECIPE_ROOT}":/recipe_root \
                         -v "${FEEDSTOCK_ROOT}":/feedstock_root \
+                        -e HOST_USER_ID="${HOST_USER_ID}" \
                         -a stdin -a stdout -a stderr \
                         condaforge/linux-anvil \
                         bash || exit 1
 
+set -e
+set +x
 export BINSTAR_TOKEN=${BINSTAR_TOKEN}
+set -x
 export PYTHONUNBUFFERED=1
 
 echo "$config" > ~/.condarc
@@ -85,21 +99,21 @@ source run_conda_forge_build_setup
     export CONDA_PY=27
     set +x
     conda build /recipe_root --quiet || exit 1
-    upload_or_check_non_existence /recipe_root cryoem --channel=main || exit 1
-
-    set -x
-    export CONDA_NPY=111
-    export CONDA_PY=27
-    set +x
-    conda build /recipe_root --quiet || exit 1
-    upload_or_check_non_existence /recipe_root cryoem --channel=main || exit 1
+    upload_or_check_non_existence /recipe_root cryoem --channel=dev || exit 1
 
     set -x
     export CONDA_NPY=112
     export CONDA_PY=27
     set +x
     conda build /recipe_root --quiet || exit 1
-    upload_or_check_non_existence /recipe_root cryoem --channel=main || exit 1
+    upload_or_check_non_existence /recipe_root cryoem --channel=dev || exit 1
+
+    set -x
+    export CONDA_NPY=113
+    export CONDA_PY=27
+    set +x
+    conda build /recipe_root --quiet || exit 1
+    upload_or_check_non_existence /recipe_root cryoem --channel=dev || exit 1
 touch /feedstock_root/build_artefacts/conda-forge-build-done
 EOF
 

@@ -54,9 +54,9 @@ install:
       echo "Configuring conda."
       source /Users/travis/miniconda3/bin/activate root
       conda config --remove channels defaults
-      conda config --add channels cryoem
-      conda config --add channels defaults
       conda config --add channels conda-forge
+      conda config --add channels defaults
+      conda config --add channels cryoem
       conda config --set show_channel_urls true
       conda install --yes --quiet conda-forge-build-setup
       source run_conda_forge_build_setup
@@ -64,4 +64,4 @@ install:
 script:
   - conda build ./recipe
 
-  - upload_or_check_non_existence ./recipe cryoem --channel=main
+  - upload_or_check_non_existence ./recipe cryoem --channel=dev
