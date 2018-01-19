@@ -14,11 +14,11 @@ requirements:
     build:
         - python
         - numpy x.x
-        - openmpi
+        - openmpi 2.0.2
         - fftw-mpi
     run:
         - numpy x.x
-        - openmpi
+        - openmpi 2.0.2
         - fftw-mpi
 
 test:
