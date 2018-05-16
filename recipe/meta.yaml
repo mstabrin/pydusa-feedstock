@@ -13,11 +13,11 @@ build:
 requirements:
     build:
         - python
-        - numpy 1.13
+        - numpy 1.13.*
         - openmpi 2.0.2
         - fftw-mpi
     run:
-        - numpy 1.13
+        - numpy 1.13.*
         - openmpi 2.0.2
         - fftw-mpi
 
