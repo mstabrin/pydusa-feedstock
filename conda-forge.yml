@@ -6,9 +6,9 @@ appveyor:
     BINSTAR_TOKEN: OcAUZlpSDgQtX8QAIX7qr8iZhsrOWwlmuyDECE7wAYBRlvXIBJ7BbXhX/Fmz4Oib
 
 channels:
-  sources: [conda-forge, defaults, cryoem]
+  sources: [cryoem, defaults, conda-forge]
   targets:
-  - [cryoem, main]
+  - [cryoem, dev]
 
 github:
   user_or_org: cryoem
