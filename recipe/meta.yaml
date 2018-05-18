@@ -7,17 +7,17 @@ source:
     fn: pydusa-master.tar.gz
 
 build:
-    number: 10
+    number: 11
     skip: True  # [win or py3k]
 
 requirements:
     build:
         - python
-        - numpy x.x
+        - numpy 1.13.*
         - openmpi 2.0.2
         - fftw-mpi
     run:
-        - numpy x.x
+        - numpy 1.13.*
         - openmpi 2.0.2
         - fftw-mpi
 
