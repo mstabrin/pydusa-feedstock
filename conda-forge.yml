@@ -8,7 +8,7 @@ appveyor:
 channels:
   sources: [cryoem, defaults, conda-forge]
   targets:
-  - [cryoem, dev]
+  - [cryoem, main]
 
 github:
   user_or_org: cryoem
