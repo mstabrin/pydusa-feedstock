@@ -1,4 +1,4 @@
-{% set branch = "master" %}
+{% set branch = "py3" %}
 {% set build  = 13 %}
 
 {% set openmpi_ver  = 3 %}
