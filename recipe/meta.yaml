@@ -10,15 +10,16 @@ source:
 
 build:
     number: 11
-    skip: True  # [win or py3k]
+    skip: True  # [win]
 
 requirements:
     build:
-        - python
+        - python 2.7.*
         - numpy 1.13.*
         - openmpi 2.0.2
         - fftw-mpi
     run:
+        - python 2.7.*
         - numpy 1.13.*
         - openmpi 2.0.2
         - fftw-mpi
