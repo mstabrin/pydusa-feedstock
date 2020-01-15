@@ -1,4 +1,5 @@
 {% set branch = "master" %}
+{% set build  = 11 %}
 
 package:
     name: pydusa
@@ -9,7 +10,8 @@ source:
     fn: pydusa-{{ branch }}.tar.gz
 
 build:
-    number: 11
+    number: {{ build }}
+    string: openmpi{{ openmpi }}_{{ build }}
     skip: True  # [win]
 
 requirements:
