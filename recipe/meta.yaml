@@ -18,8 +18,8 @@ requirements:
     host:
         - python 2.7.*
         - numpy 1.13.*
-        - openmpi 2.1.1
-        - fftw-mpi
+        - openmpi  {{ openmpi }}
+        - fftw-mpi 3.3.6 openmpi{{ openmpi }}_4
     run:
         {% for package in resolved_packages('host') %}
         - {{ package }}
