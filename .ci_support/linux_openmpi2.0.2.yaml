@@ -8,3 +8,5 @@ channel_targets:
 - cryoem main
 docker_image:
 - condaforge/linux-anvil-comp7
+openmpi:
+- 2.0.2
