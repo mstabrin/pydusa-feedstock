@@ -1,5 +1,5 @@
 {% set branch = "master" %}
-{% set build  = 13 %}
+{% set build  = 14 %}
 
 {% set openmpi_ver  = 3 %}
 
@@ -20,7 +20,7 @@ requirements:
     build:
         - {{ compiler('c') }}
     host:
-        - python 2.7.*
+        - python 3.6.*
         - numpy 1.13.*
         - openmpi  {{ openmpi_ver }}
         - fftw 3.3.8 mpi_openmpi_*
