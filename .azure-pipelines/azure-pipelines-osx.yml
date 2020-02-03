@@ -10,8 +10,14 @@ jobs:
   strategy:
     maxParallel: 8
     matrix:
-      osx_:
-        CONFIG: osx_
+      osx_numpy1.15:
+        CONFIG: osx_numpy1.15
+        UPLOAD_PACKAGES: False
+      osx_numpy1.16:
+        CONFIG: osx_numpy1.16
+        UPLOAD_PACKAGES: False
+      osx_numpy1.17:
+        CONFIG: osx_numpy1.17
         UPLOAD_PACKAGES: False
 
   steps:
