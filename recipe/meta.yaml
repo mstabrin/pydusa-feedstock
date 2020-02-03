@@ -1,8 +1,6 @@
 {% set branch = "master" %}
 {% set build  = 14 %}
 
-{% set openmpi_ver  = 3 %}
-
 package:
     name: pydusa
     version: 1.15
@@ -13,7 +11,7 @@ source:
 
 build:
     number: {{ build }}
-    string: openmpi{{ openmpi_ver }}_{{ build }}
+    string: numpy{{ numpy }}_{{ build }}
     skip: True  # [win]
 
 requirements:
@@ -22,7 +20,7 @@ requirements:
     host:
         - python 3.7.*
         - numpy {{ numpy }}
-        - openmpi  {{ openmpi_ver }}
+        - openmpi 3
         - fftw 3.3.8 mpi_openmpi_*
     run:
         {% for package in resolved_packages('host') %}
