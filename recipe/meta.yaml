@@ -1,5 +1,4 @@
 {% set branch = "master" %}
-{% set build  = 15 %}
 
 package:
     name: pydusa
@@ -10,8 +9,7 @@ source:
     fn: pydusa-{{ branch }}.tar.gz
 
 build:
-    number: {{ build }}
-    string: numpy{{ numpy }}_{{ build }}
+    number: 15
     skip: True  # [win]
 
 requirements:
