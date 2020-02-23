@@ -17,7 +17,7 @@ requirements:
         - {{ compiler('c') }}
     host:
         - python 3.7.*
-        - numpy {{ numpy }}
+        - numpy  1.17
         - openmpi 3
         - fftw 3.3.8 mpi_openmpi_*
     run:
