@@ -25,8 +25,8 @@ Current build status
   </tr><tr>
     <td>Travis</td>
     <td>
-      <a href="https://travis-ci.org/cryoem/pydusa-feedstock">
-        <img alt="macOS" src="https://img.shields.io/travis/cryoem/pydusa-feedstock/master.svg?label=macOS">
+      <a href="https://travis-ci.com/cryoem/pydusa-feedstock">
+        <img alt="macOS" src="https://img.shields.io/travis/com/cryoem/pydusa-feedstock/master.svg?label=macOS">
       </a>
     </td>
   </tr>
@@ -43,45 +43,17 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_numpy1.15</td>
+              <td>linux</td>
               <td>
                 <a href="https://dev.azure.com/cryoem/feedstock-builds/_build/latest?definitionId=blank&branchName=master">
-                  <img src="https://dev.azure.com/cryoem/feedstock-builds/_apis/build/status/pydusa-feedstock?branchName=master&jobName=linux&configuration=linux_numpy1.15" alt="variant">
+                  <img src="https://dev.azure.com/cryoem/feedstock-builds/_apis/build/status/pydusa-feedstock?branchName=master&jobName=linux&configuration=linux_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_numpy1.16</td>
+              <td>osx</td>
               <td>
                 <a href="https://dev.azure.com/cryoem/feedstock-builds/_build/latest?definitionId=blank&branchName=master">
-                  <img src="https://dev.azure.com/cryoem/feedstock-builds/_apis/build/status/pydusa-feedstock?branchName=master&jobName=linux&configuration=linux_numpy1.16" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_numpy1.17</td>
-              <td>
-                <a href="https://dev.azure.com/cryoem/feedstock-builds/_build/latest?definitionId=blank&branchName=master">
-                  <img src="https://dev.azure.com/cryoem/feedstock-builds/_apis/build/status/pydusa-feedstock?branchName=master&jobName=linux&configuration=linux_numpy1.17" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_numpy1.15</td>
-              <td>
-                <a href="https://dev.azure.com/cryoem/feedstock-builds/_build/latest?definitionId=blank&branchName=master">
-                  <img src="https://dev.azure.com/cryoem/feedstock-builds/_apis/build/status/pydusa-feedstock?branchName=master&jobName=osx&configuration=osx_numpy1.15" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_numpy1.16</td>
-              <td>
-                <a href="https://dev.azure.com/cryoem/feedstock-builds/_build/latest?definitionId=blank&branchName=master">
-                  <img src="https://dev.azure.com/cryoem/feedstock-builds/_apis/build/status/pydusa-feedstock?branchName=master&jobName=osx&configuration=osx_numpy1.16" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_numpy1.17</td>
-              <td>
-                <a href="https://dev.azure.com/cryoem/feedstock-builds/_build/latest?definitionId=blank&branchName=master">
-                  <img src="https://dev.azure.com/cryoem/feedstock-builds/_apis/build/status/pydusa-feedstock?branchName=master&jobName=osx&configuration=osx_numpy1.17" alt="variant">
+                  <img src="https://dev.azure.com/cryoem/feedstock-builds/_apis/build/status/pydusa-feedstock?branchName=master&jobName=osx&configuration=osx_" alt="variant">
                 </a>
               </td>
             </tr>
