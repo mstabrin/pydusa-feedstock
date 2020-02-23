@@ -1,5 +1,4 @@
 {% set branch = "master" %}
-{% set build  = 15 %}
 
 package:
     name: pydusa
@@ -10,8 +9,7 @@ source:
     fn: pydusa-{{ branch }}.tar.gz
 
 build:
-    number: {{ build }}
-    string: numpy{{ numpy }}_{{ build }}
+    number: 16
     skip: True  # [win]
 
 requirements:
@@ -19,7 +17,7 @@ requirements:
         - {{ compiler('c') }}
     host:
         - python 3.7.*
-        - numpy {{ numpy }}
+        - numpy  1.17
         - openmpi 3
         - fftw 3.3.8 mpi_openmpi_*
     run:
