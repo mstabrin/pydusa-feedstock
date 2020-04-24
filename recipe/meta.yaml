@@ -1,25 +1,29 @@
+{% set branch = "master" %}
+
 package:
     name: pydusa
     version: 1.15
 
 source:
-    url: https://github.com/cryoem/pydusa/archive/master.tar.gz
-    fn: pydusa-master.tar.gz
+    url: https://github.com/cryoem/pydusa/archive/{{ branch }}.tar.gz
+    fn: pydusa-{{ branch }}.tar.gz
 
 build:
-    number: 7
-    skip: True  # [win or py3k]
+    number: 16
+    skip: True  # [win]
 
 requirements:
     build:
-        - python
-        - numpy x.x
-        - openmpi
-        - fftw-mpi
+        - {{ compiler('c') }}
+    host:
+        - python 3.7.*
+        - numpy  1.17
+        - openmpi 3
+        - fftw 3.3.8 mpi_openmpi_*
     run:
-        - numpy x.x
-        - openmpi
-        - fftw-mpi
+        {% for package in resolved_packages('host') %}
+        - {{ package }}
+        {% endfor %}
 
 test:
   imports:
